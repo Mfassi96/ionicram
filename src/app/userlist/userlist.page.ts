@@ -15,6 +15,7 @@ export class UserlistPage implements OnInit {
     this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(res=>{
       this.characters=res.results;
       console.log(res);
+
     });
   }
 

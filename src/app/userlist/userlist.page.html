@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-<ion-list *ngFor="let character of characters ">
+<ion-list *ngFor="let character of characters " [routerLink]="['/profile/' + character.id]">
   <ion-item class="item">
     <ion-avatar slot="start">
       <img src="{{character.image}}" alt="">
