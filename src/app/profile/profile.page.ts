@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router'; //obtiene informacion de la UR
 export class ProfilePage implements OnInit {
 
   profileId;
+  character;
 
   constructor(private activatedRoute: ActivatedRoute,
               private http: HttpClient) {}
@@ -17,8 +18,8 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.profileId= this.activatedRoute.snapshot.paramMap.get('id'); //obtiene el id de la URL actual);
     this.http.get('https://rickandmortyapi.com/api/character/' + this.profileId).subscribe(res=>{
-      console.log(res);
-    })
+      this.character=res;
+    });
   }
 
 }

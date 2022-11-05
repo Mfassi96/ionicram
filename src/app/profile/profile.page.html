@@ -8,5 +8,21 @@
 </ion-header>
 
 <ion-content>
-
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="character">
+        <ion-card class="ion-text-center">
+          <ion-card-content>
+            <img src="{{character.image}}" alt="">
+            <ion-card-title class="ion-text-center">
+              {{character.name}}
+            </ion-card-title>
+            <p>{{character.status}}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
