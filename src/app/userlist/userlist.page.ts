@@ -7,12 +7,13 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./userlist.page.scss'],
 })
 export class UserlistPage implements OnInit {
-  datos: any;
+  characters=[];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://rickandmortyapi.com/api/character').subscribe(res=>{
-      this.datos=res;
+    this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(res=>{
+      this.characters=res.results;
       console.log(res);
     });
   }
